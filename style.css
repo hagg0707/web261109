@@ -120,7 +120,6 @@ main {
   padding: 28px 16px 50px;
 }
 
-/* 영화 통계 */
 .movie-result {
   margin: 0 0 25px;
   padding: 14px 18px;
@@ -385,8 +384,6 @@ footer p {
     padding-bottom: 70px;
   }
 }
-
-/* 영화 평점순 표 */
 
 .table-container {
     width: 100%;
