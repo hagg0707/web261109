@@ -58,6 +58,8 @@ console.log("8점 이상:", filterByRating(movies, 8).length + "편");
 
 console.log("평점순 1위:", sorted[0].title);
 
+console.table(sortByRating(movies));
+
 console.log("원본 1번:", movies[0].title);
 
 console.log(yearsSince(movies[0].date) + "년 전 개봉");
