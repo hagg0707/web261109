@@ -385,3 +385,43 @@ footer p {
     padding-bottom: 70px;
   }
 }
+
+/* 영화 평점순 표 */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface);
+}
+
+#rating-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#rating-table th,
+#rating-table td {
+    padding: 14px 10px;
+    border-bottom: 1px solid var(--border);
+}
+
+#rating-table th {
+    background: var(--surface-light);
+    color: var(--accent);
+    font-weight: 700;
+}
+
+#rating-table td {
+    color: var(--text);
+}
+
+#rating-table tr:last-child td {
+    border-bottom: none;
+}
+
+#rating-table tbody tr:hover {
+    background: var(--surface-light);
+}
