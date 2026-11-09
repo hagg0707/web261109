@@ -75,3 +75,23 @@ console.table(sortByRating(movies));
 document.getElementById("out").textContent =
     "평균 " + average(movies).toFixed(1) +
     "점, 최고 " + best(movies).title;
+
+const ratingBody = document.getElementById("rating-body");
+
+const sortedMovies = sortByRating(movies);
+
+for (let i = 0; i < sortedMovies.length; i++) {
+
+    const movie = sortedMovies[i];
+
+    const row = document.createElement("tr");
+
+    row.innerHTML =
+        "<td>" + (i + 1) + "</td>" +
+        "<td>" + movie.title + "</td>" +
+        "<td>" + movie.year + "</td>" +
+        "<td>" + movie.rating + "</td>";
+
+    ratingBody.appendChild(row);
+
+}
