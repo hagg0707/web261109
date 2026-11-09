@@ -62,6 +62,8 @@ console.log("평점순 1위:", sorted[0].title);
 
 console.log("원본 1번:", movies[0].title);
 
+console.table(sortByRating(movies));
+
 console.log(yearsSince(movies[0].date) + "년 전 개봉");
 
 console.log(posterUrl(movies[0].poster, "w342"));
