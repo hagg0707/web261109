@@ -1,0 +1,387 @@
+:root {
+  --bg: #141e30;
+  --surface: #1f2b44;
+  --surface-light: #293954;
+  --text: #f5f5f7;
+  --muted: #b9c3d4;
+  --accent: #4da3ff;
+  --warn: #ff5a5f;
+  --border: #3a4963;
+  --gold: #ffd66b;
+  --font-title: "Black Han Sans", sans-serif;
+  --font-body: "Noto Sans KR", sans-serif;
+  --gap: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent);
+}
+
+.site-header {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.logo {
+  color: var(--text);
+  font-family: var(--font-title);
+  font-size: 1.35rem;
+  text-decoration: none;
+}
+
+.site-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.site-header nav a {
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.site-header nav a:hover {
+  color: var(--text);
+}
+
+.hero {
+  min-height: 330px;
+  display: flex;
+  align-items: center;
+  background-image:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.35)),
+    linear-gradient(0deg, rgba(20, 30, 48, 0.85), rgba(20, 30, 48, 0.08)),
+    url("https://image.tmdb.org/t/p/w1280/xJHokMbljvjADYdit5fK5VQsXEG.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 45px 16px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+}
+
+.hero h1 {
+  margin: 8px 0;
+  font-family: var(--font-title);
+  font-size: clamp(2rem, 6vw, 3.3rem);
+}
+
+.hero-content > p:not(.eyebrow) {
+  max-width: 520px;
+  color: var(--muted);
+}
+
+.hero-link {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 9px 15px;
+  border-radius: 6px;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 16px 50px;
+}
+
+/* 영화 통계 */
+.movie-result {
+  margin: 0 0 25px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--gold);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.movie-section {
+  margin-bottom: 48px;
+  scroll-margin-top: 18px;
+}
+
+.section-heading {
+  margin-bottom: 18px;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.section-heading p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+}
+
+.card {
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: 0 7px 16px rgba(0, 0, 0, 0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 24px rgba(255, 214, 107, 0.28);
+}
+
+.poster {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  background: var(--surface-light);
+}
+
+.badge,
+.rank {
+  position: absolute;
+  top: 12px;
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.badge {
+  right: 12px;
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.rank {
+  left: 12px;
+  min-width: 26px;
+  text-align: center;
+  background: var(--warn);
+  color: var(--text);
+}
+
+.info {
+  padding: 12px;
+}
+
+.info h3 {
+  margin: 0 0 5px;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.info p {
+  margin: 4px 0;
+  font-size: 0.8rem;
+}
+
+.year,
+.description,
+.audience {
+  color: var(--muted);
+}
+
+.change {
+  min-height: 1.2em;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.change.up,
+.change.new {
+  color: var(--warn);
+}
+
+.change.down {
+  color: var(--accent);
+}
+
+.change.up::before {
+  content: "▲ ";
+}
+
+.change.down::before {
+  content: "▼ ";
+}
+
+.change.new::before {
+  content: "NEW";
+  font-weight: 700;
+}
+
+.card.no-poster .poster-fallback {
+  aspect-ratio: 2 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  font-family: var(--font-title);
+  background: linear-gradient(135deg, var(--accent), var(--surface));
+  color: var(--text);
+}
+
+footer {
+  padding: 24px 16px;
+  border-top: 1px solid var(--border);
+  background: #101827;
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+.detail-page {
+  min-height: 100vh;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.78)),
+    url("https://image.tmdb.org/t/p/w1280/xJHokMbljvjADYdit5fK5VQsXEG.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.detail-main {
+  min-height: 65vh;
+}
+
+.back-link {
+  margin: 0 0 18px;
+}
+
+.back-link a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.detail {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(20, 30, 48, 0.82);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.detail > img {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.detail-info h1 {
+  margin-top: 0;
+  font-family: var(--font-title);
+}
+
+.detail-info dl {
+  margin: 0;
+}
+
+.detail-info dt {
+  margin-top: 16px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.detail-info dd {
+  margin: 2px 0 0;
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 600px) {
+  .site-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .board {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero {
+    min-height: 400px;
+  }
+
+  .detail {
+    grid-template-columns: 1fr 2fr;
+    align-items: start;
+  }
+
+  .detail > img {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .board {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .hero {
+    min-height: 60vh;
+  }
+
+  .hero-content {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
