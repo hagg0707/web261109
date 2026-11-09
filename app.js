@@ -56,9 +56,9 @@ console.log("최고:", best(movies).title);
 
 console.log("8점 이상:", filterByRating(movies, 8).length + "편");
 
-console.log("평점순 1위:", sorted[0].title);
+const sorted = sortByRating(movies);
 
-console.table(sortByRating(movies));
+console.log("평점순 1위:", sorted[0].title);
 
 console.log("원본 1번:", movies[0].title);
 
